@@ -5,18 +5,53 @@ void main() {
     home: new HalamanSatu(),
   ));
 }
+
 //style text
 class HalamanSatu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Scaffold(
-    appBar: new AppBar(
-      backgroundColor: Colors.red,
-       leading: new Icon(Icons.home),
-      title: Text("App Bar"),
-      actions: <Widget>[new Icon(Icons.search)],
-    ),
+      appBar: new AppBar(
+        backgroundColor: Colors.red,
+        leading: new Icon(Icons.home),
+        title: Text("App Bar"),
+        actions: <Widget>[new Icon(Icons.search)],
+      ),
+      body: new Container(
+
+        //change column to row
+          child: new Column(
+        children: <Widget>[
+          new Icon(
+            Icons.access_alarm,
+            size: 70.0,
+            color: Colors.red,
+          ),
+          new Row( children: <Widget>[
+            new Icon(
+              Icons.timer,
+              size: 70.0,
+              color: Colors.red,
+            ),
+            new Icon(
+              Icons.account_box,
+              size: 70.0,
+              color: Colors.red,
+            ),
+          ],),
+          new Icon(
+            Icons.timer,
+            size: 70.0,
+            color: Colors.red,
+          ),
+          new Icon(
+            Icons.account_box,
+            size: 70.0,
+            color: Colors.red,
+          ),
+        ],
+      )),
     );
   }
 }
