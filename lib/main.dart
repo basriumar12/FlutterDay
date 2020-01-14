@@ -3,7 +3,13 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(new MaterialApp(
     home: new HalamanSatu(),
-  ));
+    title: 'Routes',
+    routes: <String, WidgetBuilder>{
+      '/HalamanSatu' : (BuildContext context) => new HalamanSatu(),
+      '/HalamanDua' : (BuildContext context) => new HalamanDua(),
+
+
+    }, ));
 }
 
 //style text
@@ -11,67 +17,116 @@ class HalamanSatu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Card and Passing"),
-      ),
-      body: new Container(
-        child: new Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
+      appBar: new AppBar(title: new Text("Belajar Route"),
 
-            new CardSaya(icon: Icons.home, teks : "Menu 1", colorIcon: Colors.blue),
-            new CardSaya(icon: Icons.home, teks : "Menu 2", colorIcon: Colors.red),
-            new CardSaya(icon: Icons.home, teks : "Menu 3", colorIcon: Colors.green)
-            // bisa pakai class
-//            new Card(
-//                child: new Column(
-//              children: <Widget>[
-//                new Icon(
-//                  Icons.home,
-//                  size: 70.0,
-//                  color: Colors.red,
-//                ),
-//                new Text(
-//                  "Home",
-//                  style: new TextStyle(fontSize: 20.0),
-//                )
-//              ],
-//            ))
-          ],
+      ),
+
+      body: new Center(
+        child: new IconButton(icon: new Icon(
+          Icons.headset, size: 70.0,
+            color: Colors.green,), onPressed: (){
+          Navigator.pushNamed(context, '/HalamanDua');
+        },
+
         ),
       ),
     );
   }
 }
 
-class CardSaya extends StatelessWidget {
-  CardSaya({this.icon, this.teks, this.colorIcon});
-  final IconData icon;
-  final String teks;
-  final Color colorIcon;
-
+class HalamanDua extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return new Container(
-      padding: new EdgeInsets.all(10.0),
-      child: new Card(
-          child: new Column(
-        children: <Widget>[
-          new Icon(
-           icon,
-            size: 70.0,
-            color: colorIcon,
-          ),
-          new Text(
-            teks,
-            style: new TextStyle(fontSize: 20.0),
-          )
-        ],
-      )),
+    return new Scaffold(
+      appBar: new AppBar(title: new Text("Belajar Route"),
+
+      ),
+
+      body: new Center(
+        child: new IconButton(icon: new Icon(
+          Icons.radio, size: 70.0,
+
+          color: Colors.blue,), onPressed: (){
+          Navigator.pushNamed(context, '/HalamanSatu');
+        }),
+      ),
     );
   }
-}
+
+//import 'package:flutter/material.dart';
+//
+//void main() {
+//  runApp(new MaterialApp(
+//    home: new HalamanSatu(),
+//  ));
+//}
+//
+////style text
+//class HalamanSatu extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    return new Scaffold(
+//      appBar: new AppBar(
+//        title: new Text("Card and Passing"),
+//      ),
+//      body: new Container(
+//        child: new Column(
+//          crossAxisAlignment: CrossAxisAlignment.stretch,
+//          children: <Widget>[
+//
+//            new CardSaya(icon: Icons.home, teks : "Menu 1", colorIcon: Colors.blue),
+//            new CardSaya(icon: Icons.home, teks : "Menu 2", colorIcon: Colors.red),
+//            new CardSaya(icon: Icons.home, teks : "Menu 3", colorIcon: Colors.green)
+//            // bisa pakai class
+////            new Card(
+////                child: new Column(
+////              children: <Widget>[
+////                new Icon(
+////                  Icons.home,
+////                  size: 70.0,
+////                  color: Colors.red,
+////                ),
+////                new Text(
+////                  "Home",
+////                  style: new TextStyle(fontSize: 20.0),
+////                )
+////              ],
+////            ))
+//          ],
+//        ),
+//      ),
+//    );
+//  }
+//}
+//
+//class CardSaya extends StatelessWidget {
+//  CardSaya({this.icon, this.teks, this.colorIcon});
+//  final IconData icon;
+//  final String teks;
+//  final Color colorIcon;
+//
+//  @override
+//  Widget build(BuildContext context) {
+//    // TODO: implement build
+//    return new Container(
+//      padding: new EdgeInsets.all(10.0),
+//      child: new Card(
+//          child: new Column(
+//        children: <Widget>[
+//          new Icon(
+//           icon,
+//            size: 70.0,
+//            color: colorIcon,
+//          ),
+//          new Text(
+//            teks,
+//            style: new TextStyle(fontSize: 20.0),
+//          )
+//        ],
+//      )),
+//    );
+//  }
+//}
 
 ///*
 //import 'package:flutter/material.dart';
