@@ -11,21 +11,12 @@ class HalamanSatu extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Scaffold(
-      body:
-      new Center(
-        child:  new Container(
-          color: Colors.blue[900],
-          width: 200.0,
-          height: 100.0,
-          child: new Center(
-            child: new Text(
-              "Test Hello World",
-              style: new TextStyle(color: Colors.white, fontFamily: 'serif', fontSize: 20.0),
-            ),
-          ),
-        ),
-      )
-
+    appBar: new AppBar(
+      backgroundColor: Colors.red,
+       leading: new Icon(Icons.home),
+      title: Text("App Bar"),
+      actions: <Widget>[new Icon(Icons.search)],
+    ),
     );
   }
 }
