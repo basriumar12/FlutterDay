@@ -5,7 +5,7 @@ void main() {
     home: new HalamanSatu(),
   ));
 }
-
+//style text
 class HalamanSatu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
