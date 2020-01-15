@@ -1,69 +1,57 @@
-import 'package:flutter/material.dart';
-import './hal_flowers.dart' as Flowers;
-import './hal_plan.dart' as Plan;
-import './hal_tree.dart' as Tree;
-
-void main() {
-  runApp(new MaterialApp(
-    home: new HalamanSatu(),
-    title: 'Tab Bar',
-  ));
-}
-
-class HalamanSatu extends StatefulWidget {
-  @override
-  _HomeState createState() => new _HomeState();
-}
-
-class _HomeState extends State<HalamanSatu>
-    with SingleTickerProviderStateMixin {
-  TabController tabController;
-
-  @override
-  void initState() {
-    tabController = new TabController(length: 3, vsync: this);
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    tabController.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Tab Bar"),
-        backgroundColor: Colors.amber,
-        bottom: new TabBar(
-          controller: tabController,
-          tabs: <Widget>[
-            new Tab(
-            icon: new Icon(Icons.timer), text: "Treee",
-              
-            ),
-            new Tab(
-            icon: new Icon(Icons.radio),text: "Plan",
-
-            ),
-            new Tab(
-            icon: new Icon(Icons.computer),text: "Floweers",
-
-            )
-          ],
-        ),
-      ),
-      
-      body: new TabBarView(controller: tabController, children: <Widget>[
-        new Flowers.HalFlowers(),
-        new Plan.HalPlan(),
-        new Tree.HalTree(),
-
-      ],),
-    );
-  }
-}
+//import 'package:flutter/material.dart';
+//
+//void main() {
+//  runApp(new MaterialApp(
+//    home: new HalamanSatu(),
+//    title: 'Routes',
+//    routes: <String, WidgetBuilder>{
+//      '/HalamanSatu' : (BuildContext context) => new HalamanSatu(),
+//      '/HalamanDua' : (BuildContext context) => new HalamanDua(),
+//
+//
+//    }, ));
+//}
+//
+////style text
+//class HalamanSatu extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    return new Scaffold(
+//      appBar: new AppBar(title: new Text("Belajar Route"),
+//
+//      ),
+//
+//      body: new Center(
+//        child: new IconButton(icon: new Icon(
+//          Icons.headset, size: 70.0,
+//            color: Colors.green,), onPressed: (){
+//          Navigator.pushNamed(context, '/HalamanDua');
+//        },
+//
+//        ),
+//      ),
+//    );
+//  }
+//}
+//
+//class HalamanDua extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    return new Scaffold(
+//      appBar: new AppBar(title: new Text("Belajar Route"),
+//
+//      ),
+//
+//      body: new Center(
+//        child: new IconButton(icon: new Icon(
+//          Icons.radio, size: 70.0,
+//
+//          color: Colors.blue,), onPressed: () {
+//          Navigator.pushNamed(context, '/HalamanSatu');
+//        }),
+//      ),
+//    );
+//  }
 
 //import 'package:flutter/material.dart';
 //
@@ -256,3 +244,4 @@ class _HomeState extends State<HalamanSatu>
 ////  }
 ////}
 //*/
+//}
