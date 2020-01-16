@@ -13,10 +13,7 @@ class HalTree extends StatelessWidget {
               style: new TextStyle(fontSize: 20.0),
             ),
             new Padding(padding: new EdgeInsets.all(20.0)),
-            new Icon(
-              Icons.timer,
-              size: 70.0,
-            )
+            new Image.asset("img/abaca.jpg", width: 200.0,)
           ],
         ),
       ),

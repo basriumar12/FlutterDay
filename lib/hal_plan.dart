@@ -13,9 +13,10 @@ class HalPlan extends StatelessWidget {
               style: new TextStyle(fontSize: 20.0),
             ),
             new Padding(padding: new EdgeInsets.all(20.0)),
-            new Icon(
-              Icons.timer,
-              size: 70.0,
+            new Image(
+              image: new NetworkImage(
+                  "https://www.its.ac.id/news/wp-content/uploads/sites/2/2019/11/images.jpg"),
+              width: 200.0,
             )
           ],
         ),
